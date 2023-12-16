@@ -12,16 +12,16 @@ public class BinaryCounter {
         queuee.offer("1");
         
         for (int i = 0; i < n; i++) {
-            String front = queuee.poll();
-            System.out.println(front);
-            queuee.offer(front+"0");
-            queuee.offer(front+"1");
+            String primero = queuee.poll();
+            System.out.println(primero);
+            queuee.offer(primero + "0");
+            queuee.offer(primero + "1");
         }
     }
     
     public static void main(String[] args) {
 
-        System.out.print("Count in binary to what decimal value?: ");
+        System.out.print("Cola de numeros binarios desde el 1 hasta el: ");
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         scanner.close();
