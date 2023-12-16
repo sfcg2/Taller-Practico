@@ -6,38 +6,34 @@ public class Colas {
     
     private int numero = 1;
 
-    Queue<String> q = new LinkedList<String>();
+    Queue<StringBuilder> q = new LinkedList<StringBuilder>();
 
 
     public void enqueue(int n){
 
-        String cadenaBinaria = "";
+        StringBuilder cadenaBinaria = new StringBuilder();
         
         int i = 1;
+
         while(i<=n){
 
             System.out.println("i = " + i );
-            int actualizarnum = (numero / 2); // 0
-            cadenaBinaria += String.valueOf(numero % 2);//1
-            //cadenaBinaria.indexOf(String.valueOf(numero % 2),0);
-            System.out.println("division " + actualizarnum); //0
-            System.out.println("modulo " + (numero % 2));
-            System.out.println("cadena " + cadenaBinaria); //1
-
-            //numero = actualizarnum;
-            setNumero(actualizarnum); ////0
+            int actualizarnum = (numero / 2);
+            cadenaBinaria.insert(0, String.valueOf(numero % 2));
+            setNumero(actualizarnum);
             System.out.println("nuevo numero " + getNumero()+ "\n"); 
 
             if(actualizarnum == 0 ){
+
                 q.add(cadenaBinaria);
-                cadenaBinaria = "";
+                cadenaBinaria = new StringBuilder();
+                i++;
                 setNumero(i);
 
             }
-        }System.out.println(q);
-        //System.out.println(q.peek());
-        //System.out.println(q.poll());
-        //System.out.println(q.peek());
+        }for(StringBuilder s: q){
+            System.out.println(s);
+        }
     }
 
     public int getNumero() {
@@ -51,10 +47,8 @@ public class Colas {
         try (Scanner scanner = new Scanner(System.in)) {
             Colas colas = new Colas();
 
-            System.out.println("holi");
-            System.out.print("Ingrese un numero: ");
+            System.out.print("Cola de numeros binarios desde el 1 hasta el numero:");
             int n = scanner.nextInt();
-            System.out.println("funcion");
             colas.enqueue(n);
         }
     }

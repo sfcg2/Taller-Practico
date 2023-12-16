@@ -21,7 +21,7 @@ public class BinaryCounter {
     
     public static void main(String[] args) {
 
-        System.out.print("Cola de numeros binarios desde el 1 hasta el: ");
+        System.out.print("Cola de numeros binarios desde el 1 hasta el numero: ");
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         scanner.close();
